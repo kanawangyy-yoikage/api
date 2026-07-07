@@ -7,6 +7,11 @@
       "use": "@vercel/node"
     }
   ],
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
@@ -17,30 +22,12 @@
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization, x-access-token, x-refresh-token, x-user-id"
-        },
-        {
-          "key": "X-Powered-By",
-          "value": "matchadesu_ REST API"
-        },
-        {
-          "key": "X-Creator",
-          "value": "matchadesu_"
-        },
-        {
-          "key": "X-API-Version",
-          "value": "1.0.0"
-        }
+        { "key": "Access-Control-Allow-Origin",  "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization, x-access-token, x-refresh-token, x-user-id" },
+        { "key": "X-Powered-By", "value": "matchadesu_ REST API" },
+        { "key": "X-Creator",    "value": "matchadesu_" },
+        { "key": "X-API-Version","value": "1.0.0" }
       ]
     }
   ]
