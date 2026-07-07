@@ -1,0 +1,80 @@
+{
+  "version": 2,
+  "name": "animasu-api",
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/anime/home", "dest": "/api/anime/home.js" },
+    { "src": "/anime/popular", "dest": "/api/anime/popular.js" },
+    { "src": "/anime/movies", "dest": "/api/anime/movies.js" },
+    { "src": "/anime/ongoing", "dest": "/api/anime/ongoing.js" },
+    { "src": "/anime/completed", "dest": "/api/anime/completed.js" },
+    { "src": "/anime/latest", "dest": "/api/anime/latest.js" },
+    { "src": "/anime/animelist", "dest": "/api/anime/animelist.js" },
+    { "src": "/anime/search/(.+)", "dest": "/api/anime/search/[keyword].js" },
+    { "src": "/anime/advanced-search", "dest": "/api/anime/advanced-search.js" },
+    { "src": "/anime/genres", "dest": "/api/anime/genres.js" },
+    { "src": "/anime/genre/(.+)", "dest": "/api/anime/genre/[slug].js" },
+    { "src": "/anime/characters", "dest": "/api/anime/characters.js" },
+    { "src": "/anime/character/(.+)", "dest": "/api/anime/character/[slug].js" },
+    { "src": "/anime/schedule", "dest": "/api/anime/schedule.js" },
+    { "src": "/anime/detail/(.+)", "dest": "/api/anime/detail/[slug].js" },
+    { "src": "/anime/episode/(.+)", "dest": "/api/anime/episode/[slug].js" },
+    { "src": "/anime/download/(.+)", "dest": "/api/anime/download/[slug].js" },
+
+    { "src": "/comic/docs", "dest": "/api/comic/docs.js" },
+    { "src": "/comic/comparison", "dest": "/api/comic/comparison.js" },
+    { "src": "/comic/fullstats", "dest": "/api/comic/fullstats.js" },
+    { "src": "/comic/stats", "dest": "/api/comic/stats.js" },
+    { "src": "/comic/analytics", "dest": "/api/comic/analytics.js" },
+    { "src": "/comic/health", "dest": "/api/comic/health.js" },
+    { "src": "/comic/homepage", "dest": "/api/comic/homepage.js" },
+    { "src": "/comic/unlimited", "dest": "/api/comic/unlimited.js" },
+    { "src": "/comic/realtime", "dest": "/api/comic/realtime.js" },
+    { "src": "/comic/terbaru", "dest": "/api/comic/terbaru.js" },
+    { "src": "/comic/populer", "dest": "/api/comic/populer.js" },
+    { "src": "/comic/trending", "dest": "/api/comic/trending.js" },
+    { "src": "/comic/random", "dest": "/api/comic/random.js" },
+    { "src": "/comic/browse", "dest": "/api/comic/browse.js" },
+    { "src": "/comic/genres", "dest": "/api/comic/genres.js" },
+    { "src": "/comic/search", "dest": "/api/comic/search.js" },
+    { "src": "/comic/advanced-search", "dest": "/api/comic/advanced-search.js" },
+    { "src": "/comic/recommendations", "dest": "/api/comic/recommendations.js" },
+    { "src": "/comic/scroll", "dest": "/api/comic/scroll.js" },
+    { "src": "/comic/infinite", "dest": "/api/comic/infinite.js" },
+    { "src": "/comic/favorites", "dest": "/api/comic/favorites.js" },
+    { "src": "/comic/type/(.+)", "dest": "/api/comic/type/[type].js" },
+    { "src": "/comic/genre/(.+)", "dest": "/api/comic/genre/[genre].js" },
+    { "src": "/comic/berwarna/([0-9]+)", "dest": "/api/comic/berwarna/[page].js" },
+    { "src": "/comic/pustaka/([0-9]+)", "dest": "/api/comic/pustaka/[page].js" },
+    { "src": "/comic/comic/(.+)", "dest": "/api/comic/comic/[slug].js" },
+    { "src": "/comic/chapter/(.+)/navigation", "dest": "/api/comic/chapter/[slug]/navigation.js" },
+    { "src": "/comic/chapter/(.+)", "dest": "/api/comic/chapter/[slug].js" },
+
+    { "src": "/(.*)", "dest": "/api/anime/home.js" }
+  ],
+  "headers": [
+    {
+      "source": "/anime/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
+        { "key": "X-Powered-By", "value": "matchadesu_ REST API" },
+        { "key": "X-Creator", "value": "matchadesu_" }
+      ]
+    },
+    {
+      "source": "/comic/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, DELETE, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization, x-user-id" },
+        { "key": "X-Powered-By", "value": "matchadesu_ REST API" },
+        { "key": "X-Creator", "value": "matchadesu_" },
+        { "key": "X-API-Version", "value": "1.0.0" }
+      ]
+    }
+  ]
+}
