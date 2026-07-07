@@ -4,14 +4,14 @@
   "description": "All-in-One REST API by matchadesu_",
   "main": "api/index.js",
   "scripts": {
-    "dev"  : "vercel dev",
+    "dev": "vercel dev",
     "start": "node api/index.js"
   },
   "dependencies": {
-    "axios"        : "^1.6.8",
-    "axios-retry"  : "^4.0.0",
-    "cheerio"      : "^1.0.0-rc.12",
-    "express"      : "^4.18.2",
+    "axios"        : "^1.7.9",
+    "axios-retry"  : "^4.5.0",
+    "cheerio"      : "^1.0.0",
+    "express"      : "^4.21.2",
     "user-agents"  : "^1.1.239"
   },
   "engines": {
