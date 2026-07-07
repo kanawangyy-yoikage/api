@@ -1,5 +1,5 @@
 // fix.js
-// Jalankan di dalam folder matchadesu-api: node fix.js
+// Jalankann di dalam folder matchadesu-api: node fix.js
 const fs   = require("fs");
 const path = require("path");
 
